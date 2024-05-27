@@ -7,23 +7,22 @@ from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 
 load_dotenv()
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
 
 app=FastAPI(
-    title="Langchain Server",
+    title="Blogs creator",
     version='1.0',
-    description='A simple API server'
+    description='Blog creation using OpenAI'
 )
 
 model=ChatOpenAI()
-prompt1=ChatPromptTemplate.from_template("Write me a blog about {topic} with 100 words.")
-
+prompt=ChatPromptTemplate.from_template("Write me a blog about {topic} with 100 words.")
 
 add_routes(
     app,
-    prompt1|model,
+    prompt|model,
     path='/blog'
 )
 
 if __name__=='__main__':
-    uvicorn.run(app,host='localhost',port=8000)
+    uvicorn.run(app, host='localhost', port=8000)

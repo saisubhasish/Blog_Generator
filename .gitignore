@@ -162,3 +162,4 @@ git pull origin master --allow-unrelated-histories
 
 .env
 venv/
+prompts.py

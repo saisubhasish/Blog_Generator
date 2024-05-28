@@ -1,9 +1,12 @@
+arxiv
 openai
 uvicorn
 fastapi
 langchain
 langserve
 streamlit
+wikipedia
+langchainhub
 sse_starlette
 python-dotenv
 langchain_community
